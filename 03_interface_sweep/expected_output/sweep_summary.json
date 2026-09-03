@@ -1,0 +1,370 @@
+{
+ "step1": {
+  "n_interfaces": 65536,
+  "n_distinct_generator_tuples": 65536,
+  "n_distinct_effective_psi": 65536,
+  "wta_image": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "n_coupled": 65532,
+  "n_uncoupled": 4,
+  "coupled_has_composite": 65278,
+  "coupled_frac_composite": 0.9961240310077519,
+  "coupled_shortest_composite": 43008,
+  "coupled_frac_shortest_composite": 0.65629005676616,
+  "uncoupled_has_composite": 0,
+  "uncoupled_aperiodic": 0,
+  "uncoupled_monoid_sizes": [
+   326,
+   328,
+   343
+  ],
+  "uncoupled_witness_classes": {
+   "WTA-local": 4
+  },
+  "prod_reference": {
+   "monoid_size": 576,
+   "n_nonaperiodic": 88,
+   "has_composite": false,
+   "witness_class": "WTA-local",
+   "witness_cycles": [
+    [
+     12,
+     13
+    ]
+   ]
+  },
+  "aperiodic_monoids_total": 0,
+  "gens_all_aperiodic_total": 65536,
+  "units_trivial_total": 65536,
+  "monoid_size_min": 326,
+  "monoid_size_max": 22581,
+  "monoid_size_median": 832.0,
+  "witness_class_counts": {
+   "composite": 43008,
+   "WTA-local": 22528
+  }
+ },
+ "bio_psi": {
+  "psi": "03231333",
+  "psi_class": "both",
+  "monoid_size": 3084,
+  "n_idempotents": 186,
+  "n_nonaperiodic": 361,
+  "witness_word": [
+   "g0",
+   "g1"
+  ],
+  "witness_len": 2,
+  "witness_cycles": [
+   [
+    4,
+    13
+   ]
+  ],
+  "witness_class": "composite",
+  "comp_witness_len": 2,
+  "shortest_is_composite": true,
+  "pct_smaller_M": 0.956939697265625,
+  "rank_of_M_desc": 2817,
+  "n_with_larger_M": 2816,
+  "min_witness_len_overall": 2,
+  "n_with_witness_len_2": 65536,
+  "n_coupled_witness_len_2": 65532
+ },
+ "strata": [
+  {
+   "stratum": "both",
+   "n": 65268,
+   "n_distinct_systems": 65268,
+   "has_composite": 65030,
+   "frac_has_composite": 0.9963534964,
+   "shortest_is_composite": 42934,
+   "frac_shortest_composite": 0.6578108721,
+   "aperiodic_monoid": 0,
+   "wc_none": 0,
+   "wc_dn": 0,
+   "wc_wta": 22334,
+   "wc_comp": 42934,
+   "M_min": 326,
+   "M_med": 833.0,
+   "M_max": 22581,
+   "M_mean": 1143.9734019734,
+   "nonap_med": 97.0,
+   "gens_all_ap": 65268,
+   "units_trivial": 65268,
+   "wlen_med": 2.0,
+   "complen_med": 2.0
+  },
+  {
+   "stratum": "constant",
+   "n": 4,
+   "n_distinct_systems": 4,
+   "has_composite": 0,
+   "frac_has_composite": 0.0,
+   "shortest_is_composite": 0,
+   "frac_shortest_composite": 0.0,
+   "aperiodic_monoid": 0,
+   "wc_none": 0,
+   "wc_dn": 0,
+   "wc_wta": 4,
+   "wc_comp": 0,
+   "M_min": 326,
+   "M_med": 328.0,
+   "M_max": 343,
+   "M_mean": 331.25,
+   "nonap_med": 49.0,
+   "gens_all_ap": 4,
+   "units_trivial": 4,
+   "wlen_med": 2.0,
+   "complen_med": null
+  },
+  {
+   "stratum": "g_only",
+   "n": 12,
+   "n_distinct_systems": 12,
+   "has_composite": 10,
+   "frac_has_composite": 0.8333333333,
+   "shortest_is_composite": 10,
+   "frac_shortest_composite": 0.8333333333,
+   "aperiodic_monoid": 0,
+   "wc_none": 0,
+   "wc_dn": 0,
+   "wc_wta": 2,
+   "wc_comp": 10,
+   "M_min": 328,
+   "M_med": 476.5,
+   "M_max": 8950,
+   "M_mean": 1240.9166666667,
+   "nonap_med": 60.0,
+   "gens_all_ap": 12,
+   "units_trivial": 12,
+   "wlen_med": 2.0,
+   "complen_med": 2.0
+  },
+  {
+   "stratum": "winner_only",
+   "n": 252,
+   "n_distinct_systems": 252,
+   "has_composite": 238,
+   "frac_has_composite": 0.9444444444,
+   "shortest_is_composite": 64,
+   "frac_shortest_composite": 0.253968254,
+   "aperiodic_monoid": 0,
+   "wc_none": 0,
+   "wc_dn": 0,
+   "wc_wta": 188,
+   "wc_comp": 64,
+   "M_min": 327,
+   "M_med": 588.0,
+   "M_max": 6204,
+   "M_mean": 936.1150793651,
+   "nonap_med": 73.0,
+   "gens_all_ap": 252,
+   "units_trivial": 252,
+   "wlen_med": 2.0,
+   "complen_med": 2.0
+  }
+ ],
+ "step3a_phi": {
+  "n_interfaces": 256,
+  "strata": [
+   {
+    "stratum": "constant",
+    "n": 4,
+    "has_composite": 0,
+    "frac_has_composite": 0.0,
+    "shortest_is_composite": 0,
+    "wc_none": 0,
+    "wc_dn": 4,
+    "wc_wta": 0,
+    "wc_comp": 0,
+    "M_min": 27,
+    "M_max": 36,
+    "M_med": 36.0,
+    "gens_all_ap": 4
+   },
+   {
+    "stratum": "injective",
+    "n": 24,
+    "has_composite": 24,
+    "frac_has_composite": 1.0,
+    "shortest_is_composite": 0,
+    "wc_none": 0,
+    "wc_dn": 0,
+    "wc_wta": 24,
+    "wc_comp": 0,
+    "M_min": 728,
+    "M_max": 3266,
+    "M_med": 1387.0,
+    "gens_all_ap": 24
+   },
+   {
+    "stratum": "partial",
+    "n": 228,
+    "has_composite": 200,
+    "frac_has_composite": 0.8771929824561403,
+    "shortest_is_composite": 30,
+    "wc_none": 0,
+    "wc_dn": 30,
+    "wc_wta": 168,
+    "wc_comp": 30,
+    "M_min": 48,
+    "M_max": 3795,
+    "M_med": 342.0,
+    "gens_all_ap": 228
+   }
+  ],
+  "n_distinct_generator_tuples": 256,
+  "coupled_has_composite": 224,
+  "n_coupled": 252,
+  "bio": {
+   "phi": "0123",
+   "monoid_size": 3149,
+   "witness_word": [
+    "g0",
+    "g1"
+   ],
+   "witness_class": "WTA-local",
+   "witness_cycles": [
+    [
+     12,
+     13
+    ]
+   ],
+   "has_composite": true,
+   "comp_witness_len": 3
+  },
+  "witness_class_counts": {
+   "WTA-local": 192,
+   "DN-local": 34,
+   "composite": 30
+  }
+ },
+ "step3b_schedule": {
+  "n_cases": 50331648,
+  "per_scheme": [
+   {
+    "scheme": "rec_async_D",
+    "n_cases": 16777216,
+    "frac_has_composite": 0.37398815155029297,
+    "n_has_composite": 6274480,
+    "frac_aperiodic_monoid": 0.626011848449707,
+    "n_aperiodic_monoid": 10502736,
+    "frac_gen_level": 0.37398815155029297,
+    "n_gen_level": 6274480,
+    "wc_comp": 6274480,
+    "wc_dn": 0,
+    "wc_wta": 0,
+    "wc_none": 10502736,
+    "coupled_psi_n": 16776192,
+    "coupled_psi_frac_composite": 0.37401097936885797,
+    "coupled_psi_frac_gen_level": 0.37401097936885797,
+    "coupled_psi_frac_aperiodic": 0.625989020631142
+   },
+   {
+    "scheme": "rec_async_W",
+    "n_cases": 16777216,
+    "frac_has_composite": 0.37398815155029297,
+    "n_has_composite": 6274480,
+    "frac_aperiodic_monoid": 0.626011848449707,
+    "n_aperiodic_monoid": 10502736,
+    "frac_gen_level": 0.37398815155029297,
+    "n_gen_level": 6274480,
+    "wc_comp": 6274480,
+    "wc_dn": 0,
+    "wc_wta": 0,
+    "wc_none": 10502736,
+    "coupled_psi_n": 16776192,
+    "coupled_psi_frac_composite": 0.37401097936885797,
+    "coupled_psi_frac_gen_level": 0.37401097936885797,
+    "coupled_psi_frac_aperiodic": 0.625989020631142
+   },
+   {
+    "scheme": "rec_sync",
+    "n_cases": 16777216,
+    "frac_has_composite": 0.5135916471481323,
+    "n_has_composite": 8616638,
+    "frac_aperiodic_monoid": 0.4864083528518677,
+    "n_aperiodic_monoid": 8160578,
+    "frac_gen_level": 0.5135916471481323,
+    "n_gen_level": 8616638,
+    "wc_comp": 8616638,
+    "wc_dn": 0,
+    "wc_wta": 0,
+    "wc_none": 8160578,
+    "coupled_psi_n": 16776192,
+    "coupled_psi_frac_composite": 0.5136229962079595,
+    "coupled_psi_frac_gen_level": 0.5136229962079595,
+    "coupled_psi_frac_aperiodic": 0.4863770037920405
+   }
+  ],
+  "grid": "256 phi x 65536 psi x 3 recurrent schemes, exhaustive"
+ },
+ "direction": {
+  "W_to_D_coupled_frac_composite": 0.9961240310077519,
+  "D_to_W_coupled_frac_composite": 0.8888888888888888,
+  "prod_has_composite": false
+ },
+ "characterisation": {
+  "no_composite_total": 258,
+  "characterisation": "composite cycle absent  <=>  image(psi) subset {1,2}  or  psi constant 0  or  psi constant 3",
+  "characterisation_exact": true,
+  "n_image_in_12": 256,
+  "coupled_with_composite": 65278,
+  "coupled_n": 65532,
+  "coupled_frac": 0.9961240310077519,
+  "coupled_shortest_composite": 43008,
+  "coupled_frac_shortest": 0.65629005676616,
+  "conditional_shortest_given_present": 0.6588437145745887,
+  "conditional_n": 65278,
+  "phi_coupled_n": 252,
+  "phi_coupled_with_composite": 224,
+  "phi_coupled_shortest_composite": 30,
+  "phi_coupled_frac_shortest": 0.11904761904761904,
+  "has_dn_local_psi": 18143,
+  "has_wta_local_psi": 65517
+ },
+ "verification": {
+  "core_verified_against": "audit.py + audit_results.json, all 9 systems, element-for-element",
+  "findings_numbers_checked": 102,
+  "findings_numbers_failed": 0
+ },
+ "claims": {
+  "claim_i": {
+   "verdict": "supported",
+   "n": 65532,
+   "with_composite": 65278,
+   "frac": 0.996124,
+   "exceptions": 254,
+   "exception_class": "image(psi) subset {1,2}"
+  },
+  "claim_ii": {
+   "verdict": "partly supported",
+   "uncoupled_without_composite": "4/4",
+   "product_without_composite": true,
+   "additional_coupled_without_composite": 254,
+   "total_without": 258
+  },
+  "claim_iii": {
+   "verdict": "supported for the biological interface; not generic",
+   "bio_shortest_is_composite": true,
+   "bio_witness_len": 2,
+   "bio_witness_cycle": [
+    4,
+    13
+   ],
+   "coupled_frac_shortest_composite": 0.65629,
+   "conditional_frac": 0.658844,
+   "winner_only_stratum": "64/252 = 0.253968",
+   "phi_direction_frac": 0.119048
+  }
+ }
+}

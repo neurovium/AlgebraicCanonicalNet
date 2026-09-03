@@ -1,0 +1,13 @@
+% Standalone wrapper: renders the motif schematic alone.
+%   pdflatex motif_schematic_standalone.tex   (or: tectonic <this file>)
+%   pdftocairo -svg motif_schematic_standalone.pdf motif_schematic.svg
+%   pdftocairo -png -r 300 -singlefile motif_schematic_standalone.pdf motif_schematic
+% The source path is a macro deliberately (see BUILD.md: bare file names in
+% TeX are fragile to path-rewriting tooling).
+\documentclass[border=4pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\newcommand{\motifsrc}{motif_schematic_tikz}
+\begin{document}
+\input{\motifsrc}
+\end{document}

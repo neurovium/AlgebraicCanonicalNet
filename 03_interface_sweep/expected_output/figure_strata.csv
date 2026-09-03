@@ -1,0 +1,8 @@
+sweep,stratum,n,shortest_composite,composite_longer,no_composite
+psi,constant,4,0,0,4
+psi,g_only,12,10,0,2
+psi,winner_only,252,64,174,14
+psi,both,65268,42934,22096,238
+phi,constant,4,0,0,4
+phi,partial,228,30,170,28
+phi,injective,24,0,24,0

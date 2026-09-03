@@ -1,0 +1,125 @@
+% ---------------------------------------------------------------------------
+% motif_schematic.tikz -- circuit motifs and their compositions (Fig. 1).
+%
+% Pure TikZ (not tikz-cd: these are circuit wiring diagrams, not commutative
+% diagrams). The including document needs, in its preamble:
+%     \usepackage{tikz}
+%     \usetikzlibrary{arrows.meta,calc}
+% Glyph conventions: filled arrowhead = excitatory / drive connection;
+% bar terminal = inhibitory or divisive connection. Colors match the data
+% figures (DN blue, WTA red, headline highlight orange).
+%
+% To render this file alone, compile motif_schematic_standalone.tex, then
+%     pdftocairo -svg motif_schematic.pdf motif_schematic.svg
+%     pdftocairo -png -r 300 -singlefile motif_schematic.pdf motif_schematic
+% ---------------------------------------------------------------------------
+\definecolor{dnblue}{HTML}{2C6FBB}
+\definecolor{wtared}{HTML}{D1495B}
+\definecolor{cycorange}{HTML}{E07A00}
+\definecolor{midgrey}{HTML}{6E7276}
+
+\begin{tikzpicture}[
+  font=\small,
+  exc/.style={-{Stealth[length=2mm]}, semithick},
+  inh/.style={-{Bar[width=2.4mm]}, semithick},
+  unit/.style={circle, draw, semithick, minimum size=6.2mm, inner sep=0.5pt},
+  pool/.style={rectangle, rounded corners=2pt, draw, semithick, inner sep=2.5pt, align=center},
+  mod/.style={rectangle, rounded corners=2pt, draw, semithick, minimum width=10mm,
+              minimum height=6.5mm, font=\footnotesize},
+  dnmod/.style={mod, draw=dnblue, fill=dnblue!8},
+  wtamod/.style={mod, draw=wtared, fill=wtared!8},
+  lbl/.style={font=\footnotesize},
+  tlb/.style={font=\scriptsize},
+]
+
+% ===================== (a) divisive normalization ===========================
+\node[lbl, anchor=west] at (-1.35,2.55) {\textbf{a}\hspace{5pt}divisive normalization (DN)};
+\node[unit, draw=dnblue, fill=dnblue!12] (u)  at (1.55,0.45) {\scriptsize $r$};
+\coordinate (din) at (-0.70,0.45);
+\node[lbl, anchor=east] at (din) {drive $d$};
+\draw[exc, dnblue] (din) -- (u);
+\draw[exc, dnblue] (u) -- (2.90,0.45) node[lbl, anchor=west] {output};
+\node[pool, draw=dnblue, fill=dnblue!6, tlb] (pl) at (1.00,-0.95) {shared pool\\gain state $s$};
+\draw[exc, dnblue] (u.south) .. controls (1.75,-0.35) .. (pl.east);
+\coordinate (syn) at ($(din)!0.62!(u)$);
+\draw[inh, dnblue] (pl.west) .. controls (-0.40,-0.95) and (-0.05,0.00) .. (syn);
+\node[tlb, dnblue] at (-0.32,-0.32) {$\div$};
+\node[tlb, align=center] at (1.05,-1.95) {gain state $s\in\{0,\dots,3\}$\\ $s' = \mathrm{round}\big(2d/(2+s)\big)$, clipped};
+
+% ===================== (b) winner-take-all ==================================
+\begin{scope}[shift={(5.9,0)}]
+\node[lbl, anchor=west] at (-1.05,2.55) {\textbf{b}\hspace{5pt}winner-take-all competition (WTA)};
+\node[unit, draw=wtared, fill=wtared!12] (e1) at (0.40,0.55) {\scriptsize $x_1$};
+\node[unit, draw=wtared, fill=wtared!12] (e2) at (2.80,0.55) {\scriptsize $x_2$};
+\node[unit, draw=midgrey, fill=midgrey!15] (iu) at (1.60,-0.85) {\scriptsize $y$};
+\node[lbl, anchor=south] at (0.40,1.55) {$d_1$};
+\draw[exc, wtared] (0.40,1.52) -- (e1.north);
+\node[lbl, anchor=south] at (2.80,1.55) {$d_2$};
+\draw[exc, wtared] (2.80,1.52) -- (e2.north);
+\draw[exc, wtared] (e1.150) .. controls (-0.45,1.10) and (-0.45,0.00) .. (e1.210);
+\node[tlb, wtared] at (-0.55,0.55) {$S$};
+\draw[exc, wtared] (e2.30) .. controls (3.65,1.10) and (3.65,0.00) .. (e2.330);
+\node[tlb, wtared] at (3.75,0.55) {$S$};
+\draw[inh, wtared] (e1.15) -- (e2.165);
+\draw[inh, wtared] (e2.195) -- (e1.345);
+\node[tlb, wtared] at (1.60,0.92) {$L$};
+\draw[exc, wtared] (e1.300) -- (iu.150);
+\draw[exc, wtared] (e2.240) -- (iu.30);
+\node[tlb, wtared] at (2.48,-0.12) {$W$};
+\draw[inh, midgrey] (iu.180) .. controls (0.10,-0.85) .. (e1.240);
+\draw[inh, midgrey] (iu.0)   .. controls (3.10,-0.85) .. (e2.300);
+\node[tlb, midgrey] at (0.10,-0.60) {$B$};
+\node[tlb, align=center] at (1.60,-1.95) {circuit state $(x_1,x_2,y)\in\{0,1\}^3$:\\ winners and inhibitory gate};
+\end{scope}
+
+% ===================== (c) compositions =====================================
+\begin{scope}[shift={(0,-4.25)}]
+\node[lbl, anchor=west] at (-1.35,1.62)
+  {\textbf{c}\hspace{5pt}compositions on the product state space $X_D\times X_W$};
+
+% --- independent product
+\node[dnmod]  (c1d) at (0.00,0.62)  {DN};
+\node[wtamod] (c1w) at (0.00,-0.62) {WTA};
+\node[lbl, anchor=east] at (-0.95,0.00) {$\gamma$};
+\draw[exc] (-0.90,0.08)  -- (c1d.west);
+\draw[exc] (-0.90,-0.08) -- (c1w.west);
+\node[tlb, align=center] at (0.00,-1.55) {independent\\product};
+
+% --- DN -> WTA cascade
+\begin{scope}[shift={(3.1,0)}]
+\node[dnmod]  (c2d) at (0,0.62)  {DN};
+\node[wtamod] (c2w) at (0,-0.62) {WTA};
+\node[lbl, anchor=east] at (-0.95,0.62) {$\gamma$};
+\draw[exc] (-0.90,0.62) -- (c2d.west);
+\draw[exc] (c2d.south) -- (c2w.north) node[tlb, midway, anchor=west, xshift=1.5pt] {$\varphi$};
+\node[tlb, align=center] at (0,-1.55) {DN$\to$WTA\\cascade};
+\end{scope}
+
+% --- WTA -> DN cascade (headline)
+\begin{scope}[shift={(6.2,0)}]
+\draw[dashed, cycorange, semithick, rounded corners=3pt] (-1.42,-1.20) rectangle (0.95,1.20);
+\node[dnmod]  (c3d) at (0,0.62)  {DN};
+\node[wtamod] (c3w) at (0,-0.62) {WTA};
+\node[lbl, anchor=east] at (-0.95,-0.62) {$\gamma$};
+\draw[exc] (-0.90,-0.62) -- (c3w.west);
+\draw[exc] (c3w.north) -- (c3d.south) node[tlb, midway, anchor=west, xshift=1.5pt] {$\psi$};
+\node[tlb, align=center] at (0,-1.55) {WTA$\to$DN cascade\\(headline)};
+\end{scope}
+
+% --- recurrent
+\begin{scope}[shift={(9.3,0)}]
+\node[dnmod]  (c4d) at (0,0.62)  {DN};
+\node[wtamod] (c4w) at (0,-0.62) {WTA};
+\draw[exc] (c4w.150) .. controls (-0.80,-0.15) and (-0.80,0.15) .. (c4d.210)
+    node[tlb, midway, anchor=east, xshift=-1.5pt] {$\psi$};
+\draw[exc] (c4d.330) .. controls (0.80,0.15) and (0.80,-0.15) .. (c4w.30)
+    node[tlb, midway, anchor=west, xshift=1.5pt] {$\varphi$};
+\node[tlb, align=center] at (0,-1.55) {recurrent\\(synchronous or sequential)};
+\end{scope}
+
+\node[tlb, anchor=west] at (-1.35,-2.35)
+  {interfaces:\ \ $\varphi$: DN gain state $\mapsto$ WTA drive condition;\quad
+   $\psi$: winner \& gate $\mapsto$ DN drive symbol (winner pooling);\quad
+   recurrent updates take no external symbol};
+\end{scope}
+\end{tikzpicture}

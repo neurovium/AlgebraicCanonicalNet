@@ -1,0 +1,19 @@
+{
+ "no_composite_total": 258,
+ "characterisation": "composite cycle absent  <=>  image(psi) subset {1,2}  or  psi constant 0  or  psi constant 3",
+ "characterisation_exact": true,
+ "n_image_in_12": 256,
+ "coupled_with_composite": 65278,
+ "coupled_n": 65532,
+ "coupled_frac": 0.9961240310077519,
+ "coupled_shortest_composite": 43008,
+ "coupled_frac_shortest": 0.65629005676616,
+ "conditional_shortest_given_present": 0.6588437145745887,
+ "conditional_n": 65278,
+ "phi_coupled_n": 252,
+ "phi_coupled_with_composite": 224,
+ "phi_coupled_shortest_composite": 30,
+ "phi_coupled_frac_shortest": 0.11904761904761904,
+ "has_dn_local_psi": 18143,
+ "has_wta_local_psi": 65517
+}
